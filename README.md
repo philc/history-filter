@@ -9,7 +9,7 @@ When navigating to a URL, if it matches one of the configured patterns, the exte
 from the browser history.
 
 I created this so that Chrome's Omnibox UI doesn't leak/expose sensitive prompts, e.g. past searches
-given to chatGPT or Google Search.
+given to ChatGPT or Google Search.
 
 ## Installation
 
