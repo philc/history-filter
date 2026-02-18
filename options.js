@@ -13,11 +13,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('patterns').value = data.patterns || '';
   });
 
-  document.getElementById('save').addEventListener('click', () => {
+  function save() {
     const value = document.getElementById('patterns').value;
     chrome.storage.sync.set({ patterns: value }, () => {
       showStatus('Saved.');
     });
+  }
+
+  document.getElementById('save').addEventListener('click', save);
+
+  document.getElementById('patterns').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) {
+      save();
+    }
   });
 
   document.getElementById('clearHistory').addEventListener('click', () => {
