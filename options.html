@@ -10,6 +10,7 @@
         margin: 40px auto;
         padding: 0 20px;
         color: #222;
+        background: #fff;
       }
       h1 {
         font-size: 1.4rem;
@@ -30,6 +31,8 @@
         border-radius: 4px;
         box-sizing: border-box;
         resize: vertical;
+        background: #fff;
+        color: #222;
       }
       .buttons {
         margin-top: 10px;
@@ -44,6 +47,7 @@
         border: 1px solid #ccc;
         cursor: pointer;
         background: #f5f5f5;
+        color: #222;
       }
       button:hover {
         background: #e8e8e8;
@@ -60,6 +64,36 @@
         font-size: 0.85rem;
         color: #555;
         margin-left: auto;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: #e8e8e8;
+          background: #1e1e1e;
+        }
+        p, #status {
+          color: #aaa;
+        }
+        textarea {
+          background: #2a2a2a;
+          color: #e8e8e8;
+          border-color: #555;
+        }
+        button {
+          background: #2a2a2a;
+          color: #e8e8e8;
+          border-color: #555;
+        }
+        button:hover {
+          background: #3a3a3a;
+        }
+        #save {
+          background: #1a73e8;
+          color: white;
+          border-color: #1a73e8;
+        }
+        #save:hover {
+          background: #1558b0;
+        }
       }
     </style>
   </head>
