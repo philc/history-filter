@@ -35,6 +35,8 @@ chatgpt.com/?q=
 google.com/search
 ```
 
+![Screenshot](https://github.com/user-attachments/assets/60bb21dc-1991-4405-97ef-087d81e6b45b)
+
 ### Clear past history
 
 The **Clear all matching history** button searches your entire existing history and deletes any
