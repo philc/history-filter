@@ -19,7 +19,10 @@
       p {
         color: #555;
         font-size: 0.9rem;
-        margin-top: 0;
+        margin: 1em 0;
+      }
+      a, a:visited {
+        color: #1a73e8;
       }
       textarea {
         width: 100%;
@@ -65,6 +68,13 @@
         color: #555;
         margin-left: auto;
       }
+      #homepage {
+        border-top: 1px solid #ccc;
+        padding-top: 0.5em;
+        margin-top: 2em;
+        text-align: right;
+      }
+
       @media (prefers-color-scheme: dark) {
         body {
           color: #e8e8e8;
@@ -94,14 +104,17 @@
         #save:hover {
           background: #1558b0;
         }
+        #homepage {
+          border-color: #333;
+        }
       }
     </style>
   </head>
   <body>
     <h1>History Filter Settings</h1>
     <p>
-      Enter URL patterns to block, one per line. Any URL containing the pattern will be removed from
-      the history whenever it is loaded.
+      Enter URL patterns to block, one per line. Any URL containing any of these patterns will be
+      removed from the history whenever it is loaded.
     </p>
     <textarea
       id="patterns"
@@ -112,6 +125,9 @@
       <button id="clearHistory">Clear all matching history</button>
       <span id="status"></span>
     </div>
+    <p id="homepage">
+      <a href="https://github.com/philc/history-filter" target="_blank">Homepage</a>
+    </p>
     <script src="options.js"></script>
   </body>
 </html>
