@@ -39,6 +39,6 @@ google.com/search
 
 ### Clear past history
 
-The **Clear all matching history** button searches your entire existing history and deletes any
-entries that match your current patterns. This is useful when you first set up the extension and
-want to retroactively remove URLs that were recorded before it was installed.
+Saving your patterns also searches your entire existing history and deletes any entries that match.
+This is useful when you first set up the extension and want to retroactively remove URLs that were
+recorded before it was installed.

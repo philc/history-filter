@@ -15,10 +15,40 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("patterns").value = data.patterns || "";
   });
 
+  function clearMatchingHistory(patterns, onDone) {
+    chrome.history.search({ text: "", maxResults: 1000000, startTime: 0 }, (items) => {
+      const toDelete = items.filter((item) =>
+        patterns.some((pattern) => item.url.includes(pattern))
+      );
+      if (toDelete.length === 0) {
+        onDone(0);
+        return;
+      }
+      let remaining = toDelete.length;
+      toDelete.forEach((item) => {
+        chrome.history.deleteUrl({ url: item.url }, () => {
+          remaining--;
+          if (remaining === 0) onDone(toDelete.length);
+        });
+      });
+    });
+  }
+
   function save() {
     const value = document.getElementById("patterns").value;
+    const patterns = parsePatterns(value);
     chrome.storage.sync.set({ patterns: value }, () => {
-      showStatus("Saved.");
+      if (patterns.length === 0) {
+        showStatus("Saved.");
+        return;
+      }
+      clearMatchingHistory(patterns, (count) => {
+        showStatus(
+          count > 0
+            ? `Saved. Cleared ${count} matching history entr${count === 1 ? "y" : "ies"}.`
+            : "Saved.",
+        );
+      });
     });
   }
 
@@ -28,38 +58,5 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
       save();
     }
-  });
-
-  document.getElementById("clearHistory").addEventListener("click", () => {
-    const patterns = parsePatterns(document.getElementById("patterns").value);
-    if (patterns.length === 0) {
-      showStatus("No patterns to match against.");
-      return;
-    }
-
-    chrome.history.search({ text: "", maxResults: 1000000, startTime: 0 }, (items) => {
-      const toDelete = items.filter((item) =>
-        patterns.some((pattern) => item.url.includes(pattern))
-      );
-
-      if (toDelete.length === 0) {
-        showStatus("No matching history entries found.");
-        return;
-      }
-
-      let remaining = toDelete.length;
-      toDelete.forEach((item) => {
-        chrome.history.deleteUrl({ url: item.url }, () => {
-          remaining--;
-          if (remaining === 0) {
-            showStatus(
-              `Cleared ${toDelete.length} matching history entr${
-                toDelete.length === 1 ? "y" : "ies"
-              }.`,
-            );
-          }
-        });
-      });
-    });
   });
 });
