@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "History Filter",
+  "name": "Private History Filter",
   "version": "1.0",
   "description": "Automatically removes matching URLs from browser history as they are visited",
   "permissions": ["history", "storage"],
