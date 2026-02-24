@@ -11,10 +11,17 @@
       Enter URL patterns to block, one per line. Any URL containing any of these patterns will be
       removed from the history whenever it is loaded.
     </p>
-    <textarea
-      id="patterns"
-      placeholder="chatgpt.com/?q=&#10google.com/search"
-    ></textarea>
+    <div id="patterns-container">
+      <textarea id="patterns"></textarea>
+
+      <div id="examples">
+        Common examples:<br>
+        <pre>chatgpt.com/?q=
+google.com/search
+perplexity.ai/search
+        </pre>
+      </div>
+    </div>
     <div class="buttons">
       <button id="save">Save</button>
       <span id="status"></span>
