@@ -6,29 +6,35 @@ body {
   color: #222;
   background: #fff;
   font-size: 0.9rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
-h1 {
-  font-size: 1.4rem;
-  margin-bottom: 6px;
-}
+
 p, pre {
   color: #555;
   margin: 1em 0;
 }
+
 a, a:visited {
   color: #1a73e8;
 }
-#patterns-container {
-  /* border: 1px solid red; */
-  display: flex;
+
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  grid-column: 1;
 }
 
-#patterns-left {
-  flex: 1;
-  min-width: 0;
+p#description {
+  grid-column: 1;
+}
+
+#patterns {
+  grid-column: 1;
 }
 
 #examples {
+  grid-column: 2;
   margin-left: 1em;
 }
 
@@ -51,6 +57,7 @@ textarea {
   gap: 8px;
   align-items: center;
 }
+
 button {
   padding: 7px 16px;
   font-size: 0.9rem;
@@ -60,23 +67,29 @@ button {
   background: #f5f5f5;
   color: #222;
 }
+
 button:hover {
   background: #e8e8e8;
 }
+
 #save {
   background: #1a73e8;
   color: white;
   border-color: #1a73e8;
 }
+
 #save:hover {
   background: #1558b0;
 }
+
 #status {
   font-size: 0.85rem;
   color: #555;
   margin-left: auto;
 }
+
 #homepage {
+  grid-column: 1;
   border-top: 1px solid #ccc;
   padding-top: 0.5em;
   margin-top: 2em;
@@ -88,30 +101,37 @@ button:hover {
     color: #e8e8e8;
     background: #1e1e1e;
   }
+
   p, pre, #status {
     color: #aaa;
   }
+
   textarea {
     background: #2a2a2a;
     color: #e8e8e8;
     border-color: #555;
   }
+
   button {
     background: #2a2a2a;
     color: #e8e8e8;
     border-color: #555;
   }
+
   button:hover {
     background: #3a3a3a;
   }
+
   #save {
     background: #1a73e8;
     color: white;
     border-color: #1a73e8;
   }
+
   #save:hover {
     background: #1558b0;
   }
+
   #homepage {
     border-color: #333;
   }

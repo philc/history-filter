@@ -4,33 +4,29 @@
     <meta charset="utf-8">
     <title>Private History Filter Settings</title>
     <link rel="stylesheet" href="options.css">
+    <script src="options.js"></script>
   </head>
   <body>
     <h1>Private History Filter Settings</h1>
-    <p>
+    <p id="description">
       Enter URL patterns to block, one per line. Any URL containing any of these patterns will be
       removed from the history whenever it is loaded.
     </p>
-    <div id="patterns-container">
-      <div id="patterns-left">
-        <textarea id="patterns"></textarea>
-        <div class="buttons">
-          <button id="save">Save</button>
-          <span id="status"></span>
-        </div>
-      </div>
-
-      <div id="examples">
-        Common examples:<br>
-        <pre>chatgpt.com/?q=
+    <textarea id="patterns"></textarea>
+    <div id="examples">
+      Common examples:<br>
+      <pre>
+chatgpt.com/?q=
 google.com/search
 perplexity.ai/search
-        </pre>
-      </div>
+      </pre>
+    </div>
+    <div class="buttons">
+      <button id="save">Save</button>
+      <span id="status"></span>
     </div>
     <p id="homepage">
       <a href="https://github.com/philc/private-history-filter" target="_blank">Homepage</a>
     </p>
-    <script src="options.js"></script>
   </body>
 </html>
