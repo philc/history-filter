@@ -23,6 +23,11 @@ a, a:visited {
   display: flex;
 }
 
+#patterns-left {
+  flex: 1;
+  min-width: 0;
+}
+
 #examples {
   margin-left: 1em;
 }
