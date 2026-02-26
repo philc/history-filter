@@ -2,8 +2,11 @@
   "manifest_version": 3,
   "name": "Private History Filter",
   "version": "1.0",
-  "description": "Automatically removes matching URLs from browser history as they are visited",
-  "permissions": ["history", "storage"],
+  "description": "Automatically removes matching URLs from browser history",
+  "permissions": [
+    "history",
+    "storage"
+  ],
   "options_page": "options.html",
   "background": {
     "service_worker": "background.js"

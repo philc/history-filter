@@ -29,7 +29,7 @@ function createFirefoxManifest(manifest) {
   // As of 2023-07-08 Firefox doesn't yet support background.service_worker.
   delete manifest.background["service_worker"];
   Object.assign(manifest.background, {
-    "scripts": ["background_script.js"],
+    "scripts": ["background.js"],
   });
 
   Object.assign(manifest, {
@@ -37,7 +37,10 @@ function createFirefoxManifest(manifest) {
       "gecko": {
         // This ID is needed in development mode, or many extension APIs don't work.
         "id": "private-history-filter@github.com",
-        "strict_min_version": "112.0",
+        "data_collection_permissions": {
+          "required": ["none"],
+        },
+        "strict_min_version": "126.0",
       },
     },
   });
@@ -89,7 +92,10 @@ async function buildStorePackage() {
   // Build the Firefox package
   const firefoxManifest = createFirefoxManifest(chromeManifest);
   await writeDistManifest(firefoxManifest);
-  await shell("bash", ["-c", `${zipCommand} ../firefox/private-history-filter-firefox-${version}.zip .`]);
+  await shell("bash", [
+    "-c",
+    `${zipCommand} ../firefox/private-history-filter-firefox-${version}.zip .`,
+  ]);
 
   // Build the Chrome Store package.
   writeDistManifest(chromeManifest);
