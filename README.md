@@ -1,15 +1,10 @@
 # Private History Filter
 
-A Chrome extension that automatically removes a configurable set of URLs from the browser's history
-as pages are visited.
+A browser extension which automatically removes a configurable set of URLs -- like ChatGPT requests
+and Google searches -- to prevent them from showing up as suggestions in the URL bar.
 
-## What it does
-
-When navigating to a URL, if it matches one of the configured patterns, the extension deletes it
-from the browser's history.
-
-I created this so that Chrome's Omnibox (the URL bar) doesn't show suggestions which reveal past
-searches or chatGPT session prompts.
+I created this extension to avoid showing those sensitive URLs and page titles when presenting my
+screen or when using my computer with another person.
 
 ## Installation
 
