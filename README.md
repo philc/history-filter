@@ -8,15 +8,9 @@ screen or when using my computer with another person.
 
 ## Installation
 
-1. [Download or clone this repository](https://github.com/philc/private-history-filter/archive/refs/heads/main.zip)
-   and unzip it
-2. Open Chrome and go to `chrome://extensions`
-3. Enable **Developer mode** using the toggle in the top-right corner
-4. Click **Load unpacked** and select the folder containing the extension files
-5. Private History Filter is now active
-
-To update after pulling new changes, go back to `chrome://extensions` and click the refresh icon on
-the extension card.
+* Chrome:
+  [Chrome Web Store](https://chromewebstore.google.com/detail/private-history-filter/jadcbfkcjohdeliffaigmgfkpnkmgfag)
+* Firefox: coming soon
 
 ## Configuration
 
