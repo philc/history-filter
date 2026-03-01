@@ -10,7 +10,7 @@ screen or when using my computer with another person.
 
 * Chrome:
   [Chrome Web Store](https://chromewebstore.google.com/detail/private-history-filter/jadcbfkcjohdeliffaigmgfkpnkmgfag)
-* Firefox: coming soon
+* Firefox: [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/private-history-filter/)
 
 ## Configuration
 
